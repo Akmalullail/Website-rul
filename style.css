@@ -136,7 +136,6 @@ h1 {
 .no-message {
   color: #d72660;
   font-size: 1.05em;
-  font-weight: bold;
   animation: fadeIn 1s;
 }
 @keyframes heartBeat {
