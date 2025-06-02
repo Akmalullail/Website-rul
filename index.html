@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Date Spesial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="invitation-card">
+    <div class="heart"></div>
+    <h1>Hai, Semestahku! 💌</h1>
+    <p class="intro">
+      Gua punya undangan spesial buat elu, orang paling random sejagat raya!
+    </p>
+    <div class="date-details">
+      <p><strong>Hari:</strong> Kamis, malam 8 pon</p>
+      <p><strong>Jam:</strong> pulang gw kuliah</p>
+      <p><strong>Tempat:</strong> <span class="highlight">Warteg Favorit</span></p>
+    </div>
+    <p class="message">
+      Mau deeptalk nih, jangan lupa pake rok sama nanti kite beli kacamata sebelum nongki
+    </p>
+    <button class="btn-yes" onclick="acceptDate()">Aku Mau! 😍</button>
+    <button class="btn-no" onclick="declineDate()">Maaf, Pasti mau</button>
+    <div id="response"></div>
+  </div>
+
+  <script>
+    function acceptDate() {
+      document.getElementById('response').innerHTML = "<div class='yes-message'>Yeay!</div>";
+    }
+    function declineDate() {
+      document.getElementById('response').innerHTML = "<div class='no-message'>Pastinya mau dongggg</div>";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+body {
+  background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invitation-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 6px 32px rgba(255, 105, 135, 0.15), 0 1.5px 8px rgba(238, 156, 167, 0.13);
+  padding: 36px 28px 32px 28px;
+  max-width: 350px;
+  text-align: center;
+  position: relative;
+  animation: popin 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes popin {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.heart {
+  width: 56px;
+  height: 56px;
+  background: #ff6f91;
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 4px 16px rgba(255, 111, 145, 0.2);
+}
+.heart::before,
+.heart::after {
+  content: '';
+  width: 56px;
+  height: 56px;
+  background: #ff6f91;
+  position: absolute;
+  border-radius: 50%;
+}
+.heart::before {
+  top: 0;
+  left: 28px;
+}
+.heart::after {
+  top: -28px;
+  left: 0;
+}
+
+h1 {
+  margin-top: 38px;
+  font-size: 1.6em;
+  color: #d72660;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.intro {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.date-details {
+  background: #ffe3ec;
+  border-radius: 12px;
+  padding: 14px 0;
+  margin: 0 auto 18px auto;
+  max-width: 260px;
+  font-size: 1.05em;
+  color: #bb125d;
+  box-shadow: 0 2px 8px rgba(255, 111, 145, 0.07);
+}
+.date-details .highlight {
+  background: #fff4f7;
+  color: #d72660;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.message {
+  color: #444;
+  margin-bottom: 22px;
+  font-size: 1.08em;
+}
+
+.btn-yes, .btn-no {
+  border: none;
+  outline: none;
+  padding: 12px 28px;
+  margin: 6px 5px 0 5px;
+  border-radius: 32px;
+  font-size: 1.08em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 111, 145, 0.09);
+}
+.btn-yes {
+  background: linear-gradient(90deg, #ff6f91 0%, #ffb6b9 100%);
+  color: #fff;
+}
+.btn-yes:hover {
+  background: linear-gradient(90deg, #ffb6b9 0%, #ff6f91 100%);
+  transform: scale(1.05);
+}
+.btn-no {
+  background: #fff4f7;
+  color: #d72660;
+  border: 2px solid #ffb6b9;
+}
+.btn-no:hover {
+  background: #ffdde1;
+  color: #bb125d;
+  transform: scale(1.05);
+}
+
+#response {
+  margin-top: 18px;
+  min-height: 28px;
+}
+.yes-message {
+  color: #ff6f91;
+  font-size: 1.15em;
+  font-weight: bold;
+  animation: heartBeat 1s;
+}
+.no-message {
+  color: #d72660;
+  font-size: 1.05em;
+  font-weight: bold;
+  animation: fadeIn 1s;
+}
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.2); }
+  40% { transform: scale(0.95);}
+  60% { transform: scale(1.1);}
+  80% { transform: scale(0.97);}
+  100% { transform: scale(1);}
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .invitation-card {
+    padding: 22px 7vw 24px 7vw;
+    max-width: 97vw;
+  }
+  .heart, .heart::before, .heart::after {
+    width: 40px;
+    height: 40px;
+  }
+  .heart {
+    top: -20px;
+  }
+  h1 {
+    font-size: 1.2em;
+    margin-top: 25px;
+  }
+}
